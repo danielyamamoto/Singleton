@@ -4,13 +4,16 @@
 
 using namespace std;
 
-class PS3 : public Filesystem {
+class PS3Filesystem : public Filesystem {
 public:
-	/*PS3();
-	~PS3();*/
-	
-	string read(const std::string &filename) {	return "Soy PS3\n"; };
-	void write(const std::string &filename, const std::string &content) { };
+	string ps3 = "SOY PS3\n";
+
+	//virtual string read(const string &filename) { return ps3; }
+	virtual string read(const string &filename) { return "Soy PS3\n"; }
+	virtual void write(const string &filename, const string &content) { }
+
+	//string read(const std::string &filename) { return "Soy PS3\n"; };
+	//void write(const std::string &filename, const std::string &content) { };
 
 private:
 

@@ -5,9 +5,10 @@
 #include "PS3.h"
 
 int main() {
-	Filesystem *myFile;
-	myFile->Instance();
+	/*Filesystem *myFile;
+	myFile->Instance();*/
 
+	Filesystem::Instance();
 
 	system("PAUSE");
 }

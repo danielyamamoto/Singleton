@@ -1,16 +1,17 @@
 #pragma once
 #include <iostream>
 
+using namespace std;
+
 class Filesystem {
 public:
-	static Filesystem* Instance();
+	static Filesystem &Instance();
 
-	virtual std::string read(const std::string& filename) = 0;
-	virtual void write(const std::string& filename, const std::string& content) = 0;
+	virtual ~Filesystem() { }
+	virtual string read(const string& filename) = 0;
+	virtual void write(const string& filename, const string& content) = 0;
 
-	~Filesystem() { }
 
-private:
+protected:
 	Filesystem() { }
-	static Filesystem* _instance;
 };
