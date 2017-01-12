@@ -6,7 +6,7 @@
 
 int main() {
 	Filesystem *myFile;
-	PS3 *ps3;
+	myFile->Instance();
 
 
 	system("PAUSE");
