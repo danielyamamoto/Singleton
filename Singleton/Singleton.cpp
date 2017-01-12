@@ -2,13 +2,12 @@
 
 #include "stdafx.h"
 #include "Filesystem.h"
-#include "PS3.h"
 
 int main() {
-	/*Filesystem *myFile;
-	myFile->Instance();*/
-
-	Filesystem::Instance();
+	Filesystem *myFile = Filesystem::Instance(); // Initialization
+	myFile->test();
+	printf("\n%s\n", myFile->read("Hola\n").c_str()); // Test function
 
 	system("PAUSE");
+	return 0;
 }

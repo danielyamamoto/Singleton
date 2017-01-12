@@ -3,12 +3,23 @@
 #include "PS4.h"
 #include "XONE.h"
 
-Filesystem &Filesystem::Instance() {
-#if PLATFORM == PLAYSTATION3
+#define XBOXONE
+#define PLAYSTATION3
+#define PLAYSTATION4
+
+Filesystem *Filesystem::Instance() {
+
+#ifdef PLAYSTATION3
 	static Filesystem* _instance = (Filesystem*)new PS3Filesystem();
-//#elif PLATFORM == PLAYSTATION4
-//	static Filesystem* _instance = (Filesystem*)new PS4Filesystem();
+//#else
+//	#ifdef PLAYSTATION4
+//		static Filesystem* _instance = (Filesystem*)new PS4Filesystem();
+//	#endif
+//#else
+//	#ifdef XBOXONE
+//		static Filesystem* _instance = (Filesystem*)new XONEFilesystem();
+//	#endif
 #endif
 
-	return *_instance;
+	return _instance;
 }
